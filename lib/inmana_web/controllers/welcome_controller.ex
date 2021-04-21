@@ -9,7 +9,7 @@ defmodule InmanaWeb.WelcomeController do
   end
 
   defp handle_response({:ok, message}, conn), do: reply_with(conn, message, :ok)
-  defp handle_response({:error, message}, conn), do: reply_with(conn, message, :bad_request)
+  defp handle_response({:error, message}, conn), do: reply_with(conn, message, :forbidden)
 
   defp reply_with(conn, message, status) do
     conn

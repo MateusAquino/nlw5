@@ -3,11 +3,14 @@
 <p align="center">Projeto <strong>Inmana</strong> desenvolvido durante a NLW 5 da Rocketseat</p>
 
 <p align="center">
-  <a aria-label="Versão do Node" href="https://github.com/nodejs/node/blob/master/doc/changelogs/CHANGELOG_V12.md#12.14.1">
+  <a aria-label="Versão do Elixir" href="https://github.com/elixir-lang/elixir/releases/tag/v1.11.0">
     <img src="https://img.shields.io/badge/elixir-1.11.0-informational?logo=elixir"></img>
   </a>
+  <a aria-label="Documentação" href="https://documenter.getpostman.com/view/11521890/TzJvdcLo">
+    <img src="https://img.shields.io/badge/docs-passing-green?logo=postman"></img>
+  </a>
   <a aria-label="Completo" href="https://nextlevelweek.com/episodios/elixir/1/edicao/5">
-    <img src="https://img.shields.io/badge/NLW-2/5-green?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAALVBMVEVHcExxWsF0XMJzXMJxWcFsUsD///9jRrzY0u6Xh9Gsn9n39fyMecy0qd2bjNJWBT0WAAAABHRSTlMA2Do606wF2QAAAGlJREFUGJVdj1cWwCAIBLEsRU3uf9xobDH8+GZwUYi8i6ucJwrxKE+7D0G9Q4vlYqtmCSjndr4CgCgzlyFgfKfKCVO0LrPKjmiqMxGXkJwNnXskqWG+1oSM+BSwD8f29YLNjvx/OQrn+g99oQSoNmt3PgAAAABJRU5ErkJggg=="></img>
+    <img src="https://img.shields.io/badge/NLW-3/5-green?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAALVBMVEVHcExxWsF0XMJzXMJxWcFsUsD///9jRrzY0u6Xh9Gsn9n39fyMecy0qd2bjNJWBT0WAAAABHRSTlMA2Do606wF2QAAAGlJREFUGJVdj1cWwCAIBLEsRU3uf9xobDH8+GZwUYi8i6ucJwrxKE+7D0G9Q4vlYqtmCSjndr4CgCgzlyFgfKfKCVO0LrPKjmiqMxGXkJwNnXskqWG+1oSM+BSwD8f29YLNjvx/OQrn+g99oQSoNmt3PgAAAABJRU5ErkJggg=="></img>
   </a>
 </p>
 
@@ -29,7 +32,9 @@ mix compile # Compilar o projeto para ./_build
 mix test # Rodar os testes automatizados
 mix credo.gen.config # Gerar configurações do linter (credo)
 mix credo # Rodar o linter
+mix phx.routes # Listar rotas do phoenix
 iex -S mix # Testar alguma funcionalidade/modulo separado diretamente pelo iex
+mix ecto.gen.migration nome_da_migration # criar arquivo de migration ex.: create_supplies_table 
 ```
 Assim que terminar, abra em seu navegador a página `localhost:4000` para acessar as rotas da aplicação.
 

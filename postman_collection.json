@@ -1,2 +1,658 @@
-
-{"info":{"_postman_id":"87d2f1f7-e33d-48c1-92f3-1d228b48e51f","name":"Inmana","description":"# Inmana\nEsta é a documentação do **Inmana**, um projeto web para gerenciamento de restaurantes e seus suprimentos, desenvolvido durante a **5ª edição da NextLevelWeek**.","schema":"https://schema.getpostman.com/json/collection/v2.0.0/collection.json"},"item":[{"name":"Welcome","id":"948f6b3a-951d-4f19-8a60-7c6829df51d9","request":{"method":"GET","header":[],"url":{"raw":"localhost:4000/api?name=mafios&age=42","host":["localhost"],"port":"4000","path":["api"],"query":[{"key":"name","value":"mafios"},{"key":"age","value":"42"}]},"description":"Endpoint desenvolvido no primeiro dia.  \nUm \"Hello World\" com easter eggs."},"response":[{"id":"07fe9920-c185-462e-9176-22adf76cdf3d","name":"Special Welcome","originalRequest":{"method":"GET","header":[],"url":{"raw":"localhost:4000/api?name=baNanA&age=42","host":["localhost"],"port":"4000","path":["api"],"query":[{"key":"name","value":"baNanA"},{"key":"age","value":"42"}]}},"status":"OK","code":200,"_postman_previewlanguage":"json","header":[{"key":"cache-control","value":"max-age=0, private, must-revalidate"},{"key":"content-length","value":"29"},{"key":"content-type","value":"application/json; charset=utf-8"},{"key":"date","value":"Wed, 21 Apr 2021 18:08:29 GMT"},{"key":"server","value":"Cowboy"},{"key":"x-request-id","value":"Fnfx2h5dsxDKGfsAAASD"}],"cookie":[],"body":"{\n    \"message\": \"You are special\"\n}"},{"id":"34da21d4-1e42-414f-8ecf-a01bd18d95e9","name":"Forbidden Welcome","originalRequest":{"method":"GET","header":[],"url":{"raw":"localhost:4000/api?name=baNanA&age=12","host":["localhost"],"port":"4000","path":["api"],"query":[{"key":"name","value":"baNanA"},{"key":"age","value":"12"}]}},"status":"Bad Request","code":400,"_postman_previewlanguage":"json","header":[{"key":"cache-control","value":"max-age=0, private, must-revalidate"},{"key":"content-length","value":"39"},{"key":"content-type","value":"application/json; charset=utf-8"},{"key":"date","value":"Wed, 21 Apr 2021 18:06:50 GMT"},{"key":"server","value":"Cowboy"},{"key":"x-request-id","value":"Fnfxwuz2V4epXQgAAAJE"}],"cookie":[],"body":"{\n    \"message\": \"You shall not pass banana\"\n}"},{"id":"b5604d3f-d622-4a74-9adf-9af74bc22671","name":"Default Welcome","originalRequest":{"method":"GET","header":[],"url":{"raw":"localhost:4000/api?name=mafios&age=42","host":["localhost"],"port":"4000","path":["api"],"query":[{"key":"name","value":"mafios"},{"key":"age","value":"42"}]}},"status":"OK","code":200,"_postman_previewlanguage":"json","header":[{"key":"cache-control","value":"max-age=0, private, must-revalidate"},{"key":"content-length","value":"28"},{"key":"content-type","value":"application/json; charset=utf-8"},{"key":"date","value":"Wed, 21 Apr 2021 18:08:36 GMT"},{"key":"server","value":"Cowboy"},{"key":"x-request-id","value":"Fnfx27ckE1xgKm4AAAGh"}],"cookie":[],"body":"{\n    \"message\": \"Welcome mafios\"\n}"}]},{"name":"Create Restaurant","id":"9ea353f5-6bbf-40a1-80ce-99f6bf2ab50a","request":{"method":"POST","header":[],"body":{"mode":"raw","raw":"{\n    \"name\": \"Siricascudo\",\n    \"email\": \"sirigueijo@fenda.com\"\n}","options":{"raw":{"language":"json"}}},"url":"localhost:4000/api/restaurants","description":"Endpoint desenvolvido no segundo dia.  \nCriação de restaurantes integrado ao PostgreSQL."},"response":[{"id":"3bfd721f-e919-443f-8fe7-79dc4078b927","name":"Invalid request","originalRequest":{"method":"POST","header":[],"body":{"mode":"raw","raw":"","options":{"raw":{"language":"json"}}},"url":"localhost:4000/api/restaurants"},"status":"Bad Request","code":400,"_postman_previewlanguage":"json","header":[{"key":"cache-control","value":"max-age=0, private, must-revalidate"},{"key":"content-length","value":"66"},{"key":"content-type","value":"application/json; charset=utf-8"},{"key":"date","value":"Wed, 21 Apr 2021 18:51:20 GMT"},{"key":"server","value":"Cowboy"},{"key":"x-request-id","value":"Fnf0MMR7IaJ4hbQAAAGi"}],"cookie":[],"body":"{\n    \"message\": {\n        \"email\": [\n            \"can't be blank\"\n        ],\n        \"name\": [\n            \"can't be blank\"\n        ]\n    }\n}"},{"id":"4b563655-2653-4655-b649-70971f127749","name":"Duplicated request","originalRequest":{"method":"POST","header":[],"body":{"mode":"raw","raw":"{\n    \"name\": \"Siricascudo\",\n    \"email\": \"sirigueijo@fenda.com\"\n}","options":{"raw":{"language":"json"}}},"url":"localhost:4000/api/restaurants"},"status":"Bad Request","code":400,"_postman_previewlanguage":"json","header":[{"key":"cache-control","value":"max-age=0, private, must-revalidate"},{"key":"content-length","value":"48"},{"key":"content-type","value":"application/json; charset=utf-8"},{"key":"date","value":"Wed, 21 Apr 2021 18:50:51 GMT"},{"key":"server","value":"Cowboy"},{"key":"x-request-id","value":"Fnf0KekWu08Cd0MAAACk"}],"cookie":[],"body":"{\n    \"message\": {\n        \"email\": [\n            \"has already been taken\"\n        ]\n    }\n}"},{"id":"d035717b-9ca6-49d3-9917-0a60861f5ecf","name":"Valid request","originalRequest":{"method":"POST","header":[],"body":{"mode":"raw","raw":"{\n    \"name\": \"Siricascudo\",\n    \"email\": \"sirigueijo@fenda.com\"\n}","options":{"raw":{"language":"json"}}},"url":"localhost:4000/api/restaurants"},"status":"Created","code":201,"_postman_previewlanguage":"json","header":[{"key":"cache-control","value":"max-age=0, private, must-revalidate"},{"key":"content-length","value":"144"},{"key":"content-type","value":"application/json; charset=utf-8"},{"key":"date","value":"Wed, 21 Apr 2021 18:44:45 GMT"},{"key":"server","value":"Cowboy"},{"key":"x-request-id","value":"Fnfz1MvGH37ZXOsAAAai"}],"cookie":[],"body":"{\n    \"message\": \"Restaurant created!\",\n    \"restaurant\": {\n        \"id\": \"36188644-36f0-40e7-aba1-10f69525af68\",\n        \"email\": \"sirigueijo@fenda.com\",\n        \"name\": \"Siricascudo\"\n    }\n}"}]}]}
+{
+	"info": {
+		"_postman_id": "87d2f1f7-e33d-48c1-92f3-1d228b48e51f",
+		"name": "Inmana",
+		"description": "# Inmana\nEsta é a documentação do **Inmana**, um projeto web para gerenciamento de restaurantes e seus suprimentos, desenvolvido durante a **5ª edição da NextLevelWeek**.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Welcome",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/api?name=mafios&age=42",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "mafios"
+						},
+						{
+							"key": "age",
+							"value": "42"
+						}
+					]
+				},
+				"description": "Endpoint desenvolvido no primeiro dia.  \nUm \"Hello World\" com easter eggs."
+			},
+			"response": [
+				{
+					"name": "Special Welcome",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api?name=baNanA&age=42",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "baNanA"
+								},
+								{
+									"key": "age",
+									"value": "42"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "cache-control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "content-length",
+							"value": "29"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "date",
+							"value": "Wed, 21 Apr 2021 18:08:29 GMT"
+						},
+						{
+							"key": "server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "x-request-id",
+							"value": "Fnfx2h5dsxDKGfsAAASD"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"You are special\"\n}"
+				},
+				{
+					"name": "Forbidden Welcome",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api?name=baNanA&age=12",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "baNanA"
+								},
+								{
+									"key": "age",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "cache-control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "content-length",
+							"value": "39"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "date",
+							"value": "Wed, 21 Apr 2021 18:06:50 GMT"
+						},
+						{
+							"key": "server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "x-request-id",
+							"value": "Fnfxwuz2V4epXQgAAAJE"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"You shall not pass banana\"\n}"
+				},
+				{
+					"name": "Default Welcome",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api?name=mafios&age=42",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "mafios"
+								},
+								{
+									"key": "age",
+									"value": "42"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "cache-control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "content-length",
+							"value": "28"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "date",
+							"value": "Wed, 21 Apr 2021 18:08:36 GMT"
+						},
+						{
+							"key": "server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "x-request-id",
+							"value": "Fnfx27ckE1xgKm4AAAGh"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Welcome mafios\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Restaurant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Siricascudo\",\n    \"email\": \"sirigueijo@fenda.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/api/restaurants",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"restaurants"
+					]
+				},
+				"description": "Endpoint desenvolvido no segundo dia.  \nCriação de restaurantes integrado ao PostgreSQL."
+			},
+			"response": [
+				{
+					"name": "Invalid request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/restaurants",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"restaurants"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "cache-control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "content-length",
+							"value": "66"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "date",
+							"value": "Wed, 21 Apr 2021 18:51:20 GMT"
+						},
+						{
+							"key": "server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "x-request-id",
+							"value": "Fnf0MMR7IaJ4hbQAAAGi"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": {\n        \"email\": [\n            \"can't be blank\"\n        ],\n        \"name\": [\n            \"can't be blank\"\n        ]\n    }\n}"
+				},
+				{
+					"name": "Duplicated request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Siricascudo\",\n    \"email\": \"sirigueijo@fenda.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/restaurants",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"restaurants"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "cache-control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "content-length",
+							"value": "48"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "date",
+							"value": "Wed, 21 Apr 2021 18:50:51 GMT"
+						},
+						{
+							"key": "server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "x-request-id",
+							"value": "Fnf0KekWu08Cd0MAAACk"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": {\n        \"email\": [\n            \"has already been taken\"\n        ]\n    }\n}"
+				},
+				{
+					"name": "Valid request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Siricascudo\",\n    \"email\": \"sirigueijo@fenda.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/restaurants",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"restaurants"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "cache-control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "content-length",
+							"value": "144"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "date",
+							"value": "Wed, 21 Apr 2021 18:44:45 GMT"
+						},
+						{
+							"key": "server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "x-request-id",
+							"value": "Fnfz1MvGH37ZXOsAAAai"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Restaurant created!\",\n    \"restaurant\": {\n        \"id\": \"e1bbf44a-70dd-4ffd-9c98-00871ab66860\",\n        \"email\": \"sirigueijo@fenda.com\",\n        \"name\": \"Siricascudo\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Show Supply",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/api/supplies/293b3122-1777-4b62-8c4b-4c2135572f11",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"supplies",
+						"293b3122-1777-4b62-8c4b-4c2135572f11"
+					]
+				},
+				"description": "Endpoint criado no terceiro dia.  \nLê uma supply do banco de dados c/ seu uuid."
+			},
+			"response": [
+				{
+					"name": "Show Supply",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/supplies/293b3122-1777-4b62-8c4b-4c2135572f11",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"supplies",
+								"293b3122-1777-4b62-8c4b-4c2135572f11"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "cache-control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "content-length",
+							"value": "185"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "date",
+							"value": "Thu, 22 Apr 2021 18:56:04 GMT"
+						},
+						{
+							"key": "server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "x-request-id",
+							"value": "FnhDB3IJ6sfluDMAAABC"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"supply\": {\n        \"id\": \"293b3122-1777-4b62-8c4b-4c2135572f11\",\n        \"description\": \"Molho\",\n        \"expiration_date\": \"2021-04-16\",\n        \"responsible\": \"Eren\",\n        \"restaurant_id\": \"e1bbf44a-70dd-4ffd-9c98-00871ab66860\"\n    }\n}"
+				},
+				{
+					"name": "Supply Not Found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/supplies/293b3122-1777-4b62-8c4b-4c2135572f12",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"supplies",
+								"293b3122-1777-4b62-8c4b-4c2135572f12"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "cache-control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "content-length",
+							"value": "31"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "date",
+							"value": "Thu, 22 Apr 2021 18:59:29 GMT"
+						},
+						{
+							"key": "server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "x-request-id",
+							"value": "FnhDNyrUoejl1QQAAAHE"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Supply not found!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Supply",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"restaurant_id\": \"e1bbf44a-70dd-4ffd-9c98-00871ab66860\",\n    \"description\": \"Molho\",\n    \"expiration_date\": \"2021-04-16\",\n    \"responsible\": \"Eren\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/api/supplies",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"supplies"
+					]
+				},
+				"description": "Endpoint criado no terceiro dia.  \nCria uma supply para um restaurante c/ o uuid."
+			},
+			"response": [
+				{
+					"name": "Create Supply",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"restaurant_id\": \"e1bbf44a-70dd-4ffd-9c98-00871ab66860\",\n    \"description\": \"Molho\",\n    \"expiration_date\": \"2021-04-16\",\n    \"responsible\": \"Eren\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/supplies",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"supplies"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "cache-control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "content-length",
+							"value": "213"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "date",
+							"value": "Thu, 22 Apr 2021 18:28:03 GMT"
+						},
+						{
+							"key": "server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "x-request-id",
+							"value": "FnhBf8NiB-nvSTsAAAGh"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Supply created!\",\n    \"supply\": {\n        \"id\": \"293b3122-1777-4b62-8c4b-4c2135572f11\",\n        \"description\": \"Molho\",\n        \"expiration_date\": \"2021-04-16\",\n        \"responsible\": \"Eren\",\n        \"restaurant_id\": \"e1bbf44a-70dd-4ffd-9c98-00871ab66860\"\n    }\n}"
+				}
+			]
+		}
+	]
+}

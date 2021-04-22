@@ -6,7 +6,8 @@ defmodule Inmana.Repo.Migrations.CreateRestaurantsTable do
       add :email, :string
       add :name, :string
 
-      timestamps() # campos inserted_at / updated_at
+      # campos inserted_at / updated_at
+      timestamps()
     end
 
     create unique_index(:restaurants, [:email])

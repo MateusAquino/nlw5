@@ -10,7 +10,7 @@
     <img src="https://img.shields.io/badge/docs-passing-green?logo=postman"></img>
   </a>
   <a aria-label="Completo" href="https://nextlevelweek.com/episodios/elixir/1/edicao/5">
-    <img src="https://img.shields.io/badge/NLW-3/5-green?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAALVBMVEVHcExxWsF0XMJzXMJxWcFsUsD///9jRrzY0u6Xh9Gsn9n39fyMecy0qd2bjNJWBT0WAAAABHRSTlMA2Do606wF2QAAAGlJREFUGJVdj1cWwCAIBLEsRU3uf9xobDH8+GZwUYi8i6ucJwrxKE+7D0G9Q4vlYqtmCSjndr4CgCgzlyFgfKfKCVO0LrPKjmiqMxGXkJwNnXskqWG+1oSM+BSwD8f29YLNjvx/OQrn+g99oQSoNmt3PgAAAABJRU5ErkJggg=="></img>
+    <img src="https://img.shields.io/badge/NLW-done-green?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAALVBMVEVHcExxWsF0XMJzXMJxWcFsUsD///9jRrzY0u6Xh9Gsn9n39fyMecy0qd2bjNJWBT0WAAAABHRSTlMA2Do606wF2QAAAGlJREFUGJVdj1cWwCAIBLEsRU3uf9xobDH8+GZwUYi8i6ucJwrxKE+7D0G9Q4vlYqtmCSjndr4CgCgzlyFgfKfKCVO0LrPKjmiqMxGXkJwNnXskqWG+1oSM+BSwD8f29YLNjvx/OQrn+g99oQSoNmt3PgAAAABJRU5ErkJggg=="></img>
   </a>
 </p>
 
@@ -30,6 +30,7 @@ Existem também outros comandos CLI para desenvolvimento e testes:
 mix format # Corrigir formatação do código
 mix compile # Compilar o projeto para ./_build
 mix test # Rodar os testes automatizados
+mix test --cover # Rodar os testes automatizados + mostrar coverage
 mix credo.gen.config # Gerar configurações do linter (credo)
 mix credo # Rodar o linter
 mix phx.routes # Listar rotas do phoenix
